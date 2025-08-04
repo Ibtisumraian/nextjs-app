@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed w-full z-50 transition-all duration-300  ${
+      className={`fixed w-full z-50 transition-all duration-300 py-3  ${
         isScrolled ? 'bg-white/40 backdrop-blur-md shadow-md text-black' : 'bg-transparent text-white'
       }`}
     >
@@ -59,7 +59,9 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <div>
+            <img src="https://res.cloudinary.com/deqw8tu5v/image/upload/v1754083068/Frame_w7mndv.png" alt="" />
+          </div>
         </div>
 
         <div className="navbar-center hidden lg:flex">
@@ -69,7 +71,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn bg-[#F9A51A] border-none shadow-none rounded-lg">Button</a>
         </div>
       </div>
     </div>
