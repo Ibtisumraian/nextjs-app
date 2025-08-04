@@ -33,21 +33,24 @@ const destinations = [
 
 const TopDestinations = () => {
   return (
-    <section className="w-11/12 mx-auto px-4 py-12">
-      <h2 className="text-3xl font-semibold text-center mb-10">Top Destinations</h2>
+    <section className="w-11/12 mx-auto px-4 py-16 bg-white text-gray-800">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-yellow-500 text-center">
+        Top Destinations
+      </h2>
+
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {destinations.map(({ id, name, image, description }) => (
           <div
             key={id}
-            className="border rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="bg-yellow-50 border border-yellow-200 rounded-xl overflow-hidden shadow hover:shadow-md transition-shadow duration-300"
           >
             <img
               src={image}
               alt={name}
-              className="w-full h-80 object-cover"
+              className="w-full h-70 object-cover"
             />
-            <div className="p-4">
-              <h3 className="text-xl font-medium mb-2">{name}</h3>
+            <div className="p-5">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">{name}</h3>
               <p className="text-gray-600 text-sm">{description}</p>
             </div>
           </div>

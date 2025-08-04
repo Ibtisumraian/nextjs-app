@@ -4,28 +4,6 @@ import { MdOutlineMobileFriendly } from "react-icons/md";
 import { RiCustomerService2Fill } from "react-icons/ri";
 
 const WhyChooseUs = () => {
-  const features = [
-    {
-      icon: '',
-      title: "Best Price Guarantee",
-      desc: "Find the lowest prices on hotels and flights, backed by our guarantee.",
-    },
-    {
-      icon: "⚡",
-      title: "Easy & Quick Booking",
-      desc: "Book your trip in minutes with our seamless and intuitive interface.",
-    },
-    {
-      icon: "📱",
-      title: "Mobile First",
-      desc: "Manage your bookings on the go with our fully responsive platform.",
-    },
-    {
-      icon: "📞",
-      title: "24/7 Customer Care",
-      desc: "Our support team is available around the clock to assist you with any issues.",
-    },
-  ];
 
   return (
     <div className="bg-white py-16 px-4 text-gray-800">

@@ -1,13 +1,16 @@
 "use client";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathName = usePathname()
 
   const links = (
     <>
       <a>News</a>
-      <a>Destination</a>
+      <Link href={'/Destination'}>Destination</Link>
       <a>Blog</a>
       <a>Contact</a>
     </>
@@ -29,7 +32,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed w-full z-50 transition-all duration-300 py-3  ${
+      className={`${pathName === '/' ? 'fixed top-0' : 'sticky top-0'} w-full z-50 transition-all duration-300 py-3   ${
         isScrolled ? 'bg-white/40 backdrop-blur-md shadow-md text-black' : 'bg-transparent text-white'
       }`}
     >
@@ -60,18 +63,28 @@ const Navbar = () => {
             </ul>
           </div>
           <div>
-            <img src="https://res.cloudinary.com/deqw8tu5v/image/upload/v1754083068/Frame_w7mndv.png" alt="" />
+            {pathName === '/' && isScrolled && (
+              <img src="https://res.cloudinary.com/deqw8tu5v/image/upload/v1754083078/Frame_1_an2s3r.png" alt="" />
+            )}
+
+            {pathName === '/' && !isScrolled && (
+              <img src="https://res.cloudinary.com/deqw8tu5v/image/upload/v1754083068/Frame_w7mndv.png" alt="" />
+            )}
+
+            {pathName !== '/' && (
+              <img src="https://res.cloudinary.com/deqw8tu5v/image/upload/v1754083078/Frame_1_an2s3r.png" alt="" />
+            )}
           </div>
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu flex items-center gap-5 text-base menu-horizontal px-1">
+          <ul className={`menu flex items-center gap-5 text-base menu-horizontal px-1 ${pathName !== '/' && 'text-black'}`}>
             {links}
           </ul>
         </div>
 
         <div className="navbar-end">
-          <a className="btn bg-[#F9A51A] border-none shadow-none rounded-lg">Button</a>
+          <a className="btn bg-[#F9A51A] border-none shadow-none rounded-lg">Sign In</a>
         </div>
       </div>
     </div>
