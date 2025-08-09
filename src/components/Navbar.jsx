@@ -11,7 +11,7 @@ const Navbar = () => {
   const links = (
     <>
       <a href={'/'}>Home</a>
-      <a>News</a>
+      <a href={'/News'}>News</a>
       <Link href={'/Destination'}>Destination</Link>
       <a>Blog</a>
       <a>Contact</a>
