@@ -113,7 +113,7 @@ export default function Page() {
           <div className="bg-white rounded-xl shadow-lg max-w-lg w-full p-6 relative">
             <button
               onClick={() => setSelectedNews(null)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
+              className="absolute cursor-pointer top-3 right-3 text-gray-500 hover:text-black text-xl"
             >
               ✕
             </button>

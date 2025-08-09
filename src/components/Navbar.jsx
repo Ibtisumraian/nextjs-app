@@ -1,5 +1,5 @@
 "use client";
-import Link from 'next/link';
+// import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import LoginButton from './LoginButton';
@@ -12,8 +12,8 @@ const Navbar = () => {
     <>
       <a href={'/'}>Home</a>
       <a href={'/News'}>News</a>
-      <Link href={'/Destination'}>Destination</Link>
-      <a>Blog</a>
+      <a href={'/Destination'}>Destination</a>
+      <a href={'/Blog'}>Blog</a>
       <a>Contact</a>
     </>
   );

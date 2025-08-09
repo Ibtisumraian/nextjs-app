@@ -22,7 +22,7 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-50 py-14">
         <div className=" w-11/12 mx-auto min-h-screen ">
       <h1 className="text-4xl font-bold text-center mb-10 text-[#F9A51A] uppercase">
         Top Destinations
