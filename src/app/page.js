@@ -4,6 +4,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import TopReviewSection from "../components/TopReviewSection";
 import NewsletterSection from "../components/NewsletterSection";
 import TopDestinations from "../components/TopDestinations";
+import UserInfo from "@/components/UserInfo";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <div>
         <Hero />
       </div>
+      <UserInfo />
       <div>
         <WhyChooseUs />
       </div>

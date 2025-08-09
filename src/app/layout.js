@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import NextAuthSessionProvider from "@/Providers/NextAuthSessionProvider";
 
 
 const geistSans = Geist({
@@ -25,21 +26,23 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-        <div className="">
-          <Navbar />
-        </div>
-        
-        <main>
-          {children}
-        </main>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <NextAuthSessionProvider>
+          <div className="">
+            <Navbar />
+          </div>
+          
+          <main>
+            {children}
+          </main>
 
-        <div>
-          <Footer/>
-        </div>
-      </body>
+          <div>
+            <Footer/>
+          </div>
+      </NextAuthSessionProvider>
+        </body>        
     </html>
   );
 }

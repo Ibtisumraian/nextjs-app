@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import LoginButton from './LoginButton';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,6 +10,7 @@ const Navbar = () => {
 
   const links = (
     <>
+      <a href={'/'}>Home</a>
       <a>News</a>
       <Link href={'/Destination'}>Destination</Link>
       <a>Blog</a>
@@ -84,7 +86,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <a className="btn bg-[#F9A51A] border-none shadow-none rounded-lg">Sign In</a>
+          <LoginButton />
         </div>
       </div>
     </div>
