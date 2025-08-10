@@ -1,20 +1,21 @@
 "use client";
-// import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import LoginButton from './LoginButton';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathName = usePathname()
+console.log(pathName);
 
   const links = (
     <>
-      <a href={'/'}>Home</a>
-      <a href={'/News'}>News</a>
-      <a href={'/Destination'}>Destination</a>
-      <a href={'/Blog'}>Blog</a>
-      <a>Contact</a>
+      <Link href={'/'}>Home</Link>
+      <Link href={'/News'}>News</Link>
+      <Link href={'/Destination'}>Destination</Link>
+      <Link href={'/Blog'}>Blog</Link>
+      <Link href={'/Contact'}>Contact</Link>
     </>
   );
 
@@ -31,10 +32,13 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  if (pathName !== '/' || '/Details' || '/News' || '/Blog' || '/Destination' || '/Contact') {
+   return '' 
+  }
 
   return (
     <div
-      className={`${pathName === '/' ? 'fixed top-0' : 'sticky top-0'} w-full z-50 transition-all duration-300 py-3   ${
+      className={`${pathName === '/' || '/Details' ? 'fixed top-0' : 'sticky top-0'} w-full z-50 transition-all duration-300 py-3   ${
         isScrolled ? 'bg-white/40 backdrop-blur-md shadow-md text-black' : 'bg-transparent text-white'
       }`}
     >
