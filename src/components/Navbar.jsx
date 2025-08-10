@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -96,7 +96,7 @@ const Navbar = () => {
         </div>
 
           <div className="navbar-end">
-            {status == 'authenticated' ? <Link href={'/Register'} className='btn bg-[#F9A51A] text-white font-semibold border-none shadow-none rounded-lg'>Sign Out</Link> : <Link href={'/Register'} className='btn bg-[#F9A51A] text-white font-semibold border-none shadow-none rounded-lg'>Sign Up</Link>}
+            {status == 'authenticated' ? <button onClick={() => signOut({ callbackUrl: "/" })} className='btn bg-[#F9A51A] text-white font-semibold border-none shadow-none rounded-lg'>Sign Out</button> : <Link href={'/Register'} className='btn bg-[#F9A51A] text-white font-semibold border-none shadow-none rounded-lg'>Sign Up</Link>}
         </div>
       </div>
     </div>
