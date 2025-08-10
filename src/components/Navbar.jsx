@@ -1,7 +1,6 @@
 "use client";
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import LoginButton from './LoginButton';
 import Link from 'next/link';
 
 const Navbar = () => {
@@ -32,13 +31,18 @@ console.log(pathName);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  if (pathName !== '/' || '/Details' || '/News' || '/Blog' || '/Destination' || '/Contact') {
-   return '' 
-  }
 
-  return (
+  if (  pathName === '/' ||
+        pathName === '/Details' ||
+        pathName === '/News' ||
+        pathName === '/Blog' ||
+        pathName === '/Destination' ||
+        pathName === '/Register' ||
+        pathName === '/Contact'
+      ) {
+    return (
     <div
-      className={`${pathName === '/' || '/Details' ? 'fixed top-0' : 'sticky top-0'} w-full z-50 transition-all duration-300 py-3   ${
+      className={`${pathName === '/' ? 'fixed top-0' : 'sticky top-0'} w-full z-50 transition-all duration-300 py-3   ${
         isScrolled ? 'bg-white/40 backdrop-blur-md shadow-md text-black' : 'bg-transparent text-white'
       }`}
     >
@@ -90,11 +94,14 @@ console.log(pathName);
         </div>
 
         <div className="navbar-end">
-          <LoginButton />
+          <Link href={'/Register'} className='btn bg-[#F9A51A] border-none shadow-none rounded-lg'>Sign Up</Link>
         </div>
       </div>
     </div>
   );
+  }
+
+  
 };
 
 export default Navbar;

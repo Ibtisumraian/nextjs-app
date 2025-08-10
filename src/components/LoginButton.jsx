@@ -7,7 +7,7 @@ const LoginButton = () => {
         <div>
             <button
                 onClick={()=> signIn()}
-                className="btn bg-[#F9A51A] border-none shadow-none rounded-lg">Sign In</button>
+                className=" text-[#F9A51A] cursor-pointer">Sign In</button>
         </div>
     );
 };
