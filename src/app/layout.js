@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NextAuthSessionProvider from "@/Providers/NextAuthSessionProvider";
+import { Bounce, ToastContainer } from "react-toastify";
 
 
 const geistSans = Geist({
@@ -35,6 +36,19 @@ export default function RootLayout({ children }) {
           </div>
           
           <main>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+              transition={Bounce}
+              />
             {children}
           </main>
 

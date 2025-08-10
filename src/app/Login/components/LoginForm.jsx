@@ -1,59 +1,53 @@
 "use client"
-import { registerUser } from '@/app/actions/auth/registerUser'
-import LoginButton from '@/components/LoginButton'
-import React from 'react'
-import { useRouter } from 'next/navigation'
-import { toast } from 'react-toastify'
-import SocialLogin from '@/app/Login/components/SocialLogin'
 
-export default function RegisterForm() {
+import Link from 'next/link'
+import React from 'react'
+import { signIn } from "next-auth/react"
+import { useRouter } from 'next/navigation'
+import { Bounce, toast } from 'react-toastify'
+import SocialLogin from "./SocialLogin";
+
+export default function LoginForm() {
     const router = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const form = e.target
-        const name = form.name.value
         const email = form.email.value
         const password = form.password.value
-
         toast.info("Submitting...")
 
         try {
-            const result = await registerUser({ name, email, password })
-
-            if (result?.acknowledged) {
-                toast.success("Account created successfully!")
-                form.reset()
+            const response = await signIn("credentials", { email, password, callbackUrl: '/', redirect: false })
+            if (response.ok) {
+                toast.success('Sign In Successful!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                })
                 router.push('/')
-            } else if (result?.error) {
-                toast.error(result.error)
+                form.reset()
             } else {
-                toast.error("Registration failed")
+                alert('Invalid Email or Password')
             }
         } catch (error) {
-            toast.error("Something went wrong")
-            console.error(error)
+            console.log(error)
         }
     }
 
     return (
         <div className='flex-grow flex justify-center items-start '>
             <div className="border border-gray-300 rounded-md p-8 max-w-md w-full shadow-sm">
-                <h2 className="font-bold text-xl mb-6 text-[#F9A51A]">Create an account</h2>
+                <h2 className="font-bold text-xl mb-6 text-[#F9A51A]">Sign In</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                        <label className="block text-sm mb-1" htmlFor="fullName"></label>
-                        <input
-                            name='name'
-                            type="text"
-                            className="border-b border-gray-300 w-full py-1 focus:outline-none focus:border-[#F9A51A]"
-                            placeholder="Full Name"
-                        />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm mb-1" htmlFor="usernameOrEmail"></label>
                         <input
                             name='email'
                             type="email"
@@ -63,7 +57,6 @@ export default function RegisterForm() {
                     </div>
 
                     <div>
-                        <label className="block text-sm mb-1" htmlFor="password"></label>
                         <input
                             name="password"
                             type="password"
@@ -76,16 +69,17 @@ export default function RegisterForm() {
                         type="submit"
                         className="w-full cursor-pointer bg-[#F9A51A] text-white font-semibold py-2 rounded mt-4 hover:bg-[#d88c16] transition"
                     >
-                        Sign Up
+                        Sign In
                     </button>
                 </form>
+
                 <div className="text-center my-4 text-gray-500">or</div>
-                
+
                 <SocialLogin/>
 
                 <div className="text-center text-sm mt-4">
-                    Already have an account?{' '}
-                    <LoginButton />
+                    Don't have an account?{' '}
+                    <Link href={'/Register'} className='text-[#F9A51A]'>Sign Up</Link>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const places = [
@@ -47,9 +48,9 @@ const Hero= () => {
           <p className="text-lg">
             Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach...
           </p>
-          <button className="btn shadow-none w-fit rounded-lg bg-[#F9A51A] border-none text-black px-6">
-            Booking <span className="text-2xl">→</span>
-          </button>
+          <Link href={'/Destination'} className="btn shadow-none w-fit rounded-lg bg-[#F9A51A] border-none text-white px-6">
+            Booking 
+          </Link>
         </div>
 
         {/* Destination Carousel */}

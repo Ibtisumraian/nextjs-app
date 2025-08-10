@@ -2,11 +2,12 @@
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathName = usePathname()
-console.log(pathName);
+  const { data : session, status } = useSession()
 
   const links = (
     <>
@@ -38,6 +39,7 @@ console.log(pathName);
         pathName === '/Blog' ||
         pathName === '/Destination' ||
         pathName === '/Register' ||
+        pathName === '/Login' ||
         pathName === '/Contact'
       ) {
     return (
@@ -93,8 +95,8 @@ console.log(pathName);
           </ul>
         </div>
 
-        <div className="navbar-end">
-          <Link href={'/Register'} className='btn bg-[#F9A51A] border-none shadow-none rounded-lg'>Sign Up</Link>
+          <div className="navbar-end">
+            {status == 'authenticated' ? <Link href={'/Register'} className='btn bg-[#F9A51A] text-white font-semibold border-none shadow-none rounded-lg'>Sign Out</Link> : <Link href={'/Register'} className='btn bg-[#F9A51A] text-white font-semibold border-none shadow-none rounded-lg'>Sign Up</Link>}
         </div>
       </div>
     </div>
