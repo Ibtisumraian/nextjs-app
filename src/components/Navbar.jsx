@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathName = usePathname()
   const { data : session, status } = useSession()
+console.log(session?.user?.email);
 
   const links = (
     <>
@@ -16,6 +17,7 @@ const Navbar = () => {
       <Link href={'/Destination'}>Destination</Link>
       <Link href={'/Blog'}>Blog</Link>
       <Link href={'/Contact'}>Contact</Link>
+      { session && <Link href={'/Dashboard'}>Dashboard</Link> }
     </>
   );
 

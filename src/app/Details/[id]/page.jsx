@@ -2,18 +2,30 @@
 
 import dbConnect, { collectionNameObject } from "@/lib/dbConnect";
 import { ObjectId } from "mongodb";
-import Link from "next/link";
 import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
+import Link from "next/link";
+
 
 export async function bookHotel(formData) {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    redirect("/Login");
+  }
+
   const from = formData.get("from");
   const to = formData.get("to");
   const hotelName = formData.get("hotelName");
   const payableAmount = formData.get("payableAmount");
 
-  const bookingsCollection = dbConnect(collectionNameObject.bookingsCollection);
+  const bookingsCollection = await dbConnect(collectionNameObject.bookingsCollection);
 
   await bookingsCollection.insertOne({
+    name: session.user.name,
+    email: session.user.email,
+    user_photo: session.user.image,
     hotelName,
     payableAmount,
     from,
@@ -23,6 +35,7 @@ export async function bookHotel(formData) {
 
   redirect("/Destination");
 }
+
 
 export default async function page({ params }) {
   const p = await params;
