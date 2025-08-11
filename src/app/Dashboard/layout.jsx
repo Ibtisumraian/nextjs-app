@@ -45,7 +45,7 @@ export default function DashboardLayout({ children }) {
       {/* Sidebar */}
 <aside
   className={`
-    fixed inset-y-0 left-0 z-10 w-64 bg-[#F9A51A99] p-6 pt-16 text-white h-screen overflow-y-auto
+    fixed inset-y-0 left-0 z-10 w-64 bg-[#F9A51A99] p-6 pt-16 text-white min-h-screen overflow-y-auto
     transform transition-transform duration-300 ease-in-out
     ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
     md:translate-x-0 md:fixed md:flex-shrink-0
@@ -78,7 +78,7 @@ export default function DashboardLayout({ children }) {
             Manage Items
           </Link>
           <Link
-            href={"/Dashboard/items"}
+            href={"/Dashboard/Bookings"}
             className="block hover:bg-yellow-50 hover:text-black p-2 rounded transition-colors"
           >
             My Bookings
@@ -94,7 +94,7 @@ export default function DashboardLayout({ children }) {
 
       {/* Content */}
       <main
-        className="flex-1 bg-yellow-50 p-8 pt-16 md:ml-64"
+        className=" bg-yellow-50 p-8 pt-16 md:ml-64 min-h-[1080px] w-full"
         onClick={() => sidebarOpen && setSidebarOpen(false)}
       >
         {children}
