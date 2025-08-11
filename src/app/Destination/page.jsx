@@ -17,7 +17,7 @@ export default async function Page() {
           {hotels.map((hotel) => (
             <div
               key={hotel._id}
-              className="bg-white/10 backdrop-blur-md shadow-lg rounded-xl overflow-hidden border border-white/20 hover:scale-105 transition-all duration-300"
+              className="bg-yellow-50 border-2 border-yellow-200 backdrop-blur-md shadow-lg rounded-xl overflow-hidden hover:scale-105 transition-all duration-300"
             >
               <div className="relative">
                 <img

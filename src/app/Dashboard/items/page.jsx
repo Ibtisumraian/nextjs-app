@@ -62,7 +62,7 @@ export default function ItemsPage() {
 
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href={`/dashboard/items/${item._id}`}
+                  href={`/Dashboard/Details/${item._id}`}
                   className="text-[#F9A51A] hover:text-yellow-700 font-medium"
                 >
                   View

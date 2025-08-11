@@ -70,12 +70,12 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm flex items-center gap-3 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm text-black flex  gap-3 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 px-4 shadow"
             >
               {links}
             </ul>
           </div>
-          <div>
+          <div className='hidden lg:block'>
             {pathName === '/' && isScrolled && (
               <img src="https://res.cloudinary.com/deqw8tu5v/image/upload/v1754083078/Frame_1_an2s3r.png" alt="" />
             )}
