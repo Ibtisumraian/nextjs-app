@@ -80,9 +80,9 @@ Check out the live demo of the project here:
 ##  Author
 
 **Ibtisum Raian**  
-Email: ibtisumraian@gmail.com  
-LinkedIn: [Ibtisum_Raian](https://www.linkedin.com/in/ibtisumraian)
-Portfolio: [Ibtisum_Raian](https://ibtisum-raian.web.app)
-GitHub: [Ibtisum_Raian](https://github.com/Ibtisumraian)
+- Email: ibtisumraian@gmail.com  
+- LinkedIn: [Ibtisum_Raian](https://www.linkedin.com/in/ibtisumraian)
+- Portfolio: [Ibtisum_Raian](https://ibtisum-raian.web.app)
+- GitHub: [Ibtisum_Raian](https://github.com/Ibtisumraian)
 
 ---
