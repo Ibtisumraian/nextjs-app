@@ -6,7 +6,6 @@ import React from "react";
 export default async function Page() {
   const hotelsCollections = dbConnect(collectionNameObject.hotelsCollection)
   const hotels = await hotelsCollections.find({}).toArray()
-console.log(hotels);
 
   return (
     <div className="bg-gray-50 py-14">
