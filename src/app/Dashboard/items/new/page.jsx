@@ -1,8 +1,11 @@
 "use client"
+import { useSession } from "next-auth/react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function AddItem() {
-  const [features, setFeatures] = useState([""]);
+    const [features, setFeatures] = useState([""]);
+    const { data : session } = useSession()
 
   // Handle dynamic feature inputs
   const handleFeatureChange = (index, value) => {
@@ -25,6 +28,7 @@ export default function AddItem() {
     const formData = new FormData(e.target);
     const data = {
       name: formData.get("name"),
+      posted_by: session?.user?.email,
       destinationName: formData.get("destinationName"),
       image: formData.get("image"),
       price: Number(formData.get("price")),
@@ -41,6 +45,12 @@ export default function AddItem() {
       })
       const postedResponse = await res.json()
       console.log(postedResponse);
+      
+      if (postedResponse.insertedId) {
+          toast.success('Hotel Added Successfully')
+          e.target.reset();
+          setFeatures([""]);
+      }
       
   };
 

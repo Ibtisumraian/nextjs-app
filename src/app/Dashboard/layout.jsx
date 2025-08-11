@@ -83,12 +83,12 @@ export default function DashboardLayout({ children }) {
           >
             My Bookings
           </Link>
-          <Link
+          {/* <Link
             href={"/Dashboard/profile"}
             className="block hover:bg-yellow-50 hover:text-black p-2 rounded transition-colors"
           >
             Profile
-          </Link>
+          </Link> */}
         </nav>
       </aside>
 
