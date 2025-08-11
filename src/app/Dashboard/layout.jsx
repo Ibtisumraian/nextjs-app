@@ -54,6 +54,12 @@ export default function DashboardLayout({ children }) {
         <h2 className="text-xl font-bold mb-6">Dashboard</h2>
         <nav className="space-y-3">
           <Link
+            href={"/"}
+            className="block hover:bg-yellow-50 hover:text-black p-2 rounded transition-colors"
+          >
+            Home
+          </Link>
+          <Link
             href={"/Dashboard"}
             className="block hover:bg-yellow-50 hover:text-black p-2 rounded transition-colors"
           >

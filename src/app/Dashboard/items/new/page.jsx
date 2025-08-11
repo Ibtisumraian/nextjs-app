@@ -19,7 +19,7 @@ export default function AddItem() {
     setFeatures(features.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
@@ -33,8 +33,15 @@ export default function AddItem() {
       features: features.filter(f => f.trim() !== ""),
     };
 
-    console.log("Submit this data to backend:", data);
-    // TODO: submit data via API or server action
+    // console.log("Submit this data to backend:", data);
+      // TODO: submit data via API or server action
+      const res = await fetch('http://localhost:3000/api/detail', {
+          method: 'POST',
+          body: JSON.stringify(data)
+      })
+      const postedResponse = await res.json()
+      console.log(postedResponse);
+      
   };
 
   return (
@@ -125,7 +132,7 @@ export default function AddItem() {
 
         <button
           type="submit"
-          className="bg-[#F9A51A] hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded w-full sm:w-auto transition"
+          className="bg-[#F9A51A] hover:bg-yellow-600 cursor-pointer text-white font-semibold px-6 py-3 rounded w-full sm:w-auto transition"
         >
           Create Hotel
         </button>

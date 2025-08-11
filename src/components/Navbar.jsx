@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathName = usePathname()
   const { data : session, status } = useSession()
-console.log(session?.user?.email);
 
   const links = (
     <>
