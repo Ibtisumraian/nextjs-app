@@ -11,7 +11,7 @@ export default function ItemsPage() {
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/posted");
+        const res = await fetch("https://nextjs-booking-app-three.vercel.app/api/posted");
         const data = await res.json();
         setItems(data);
       } catch (err) {

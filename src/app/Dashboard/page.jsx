@@ -22,8 +22,8 @@ export default function DashboardHome() {
     const fetchData = async () => {
       try {
         const [itemsRes, detailsRes] = await Promise.all([
-          fetch("http://localhost:3000/api/posted"),
-          fetch("http://localhost:3000/api/detail"),
+          fetch("https://nextjs-booking-app-three.vercel.app/api/posted"),
+          fetch("https://nextjs-booking-app-three.vercel.app/api/detail"),
         ]);
         const itemsData = await itemsRes.json();
         const detailsData = await detailsRes.json();

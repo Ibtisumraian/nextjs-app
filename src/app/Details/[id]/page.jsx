@@ -45,7 +45,7 @@ export async function bookHotel(formData) {
 export default async function page({ params }) {
   const session = await getServerSession(authOptions);
   const p = await params;
-  const res = await fetch(`http://localhost:3000/api/detail/${p.id}`)
+  const res = await fetch(`https://nextjs-booking-app-three.vercel.app/api/detail/${p.id}`)
   const hotel = await res.json()
 
   if (!hotel) {

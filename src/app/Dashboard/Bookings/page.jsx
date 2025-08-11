@@ -7,7 +7,7 @@ export default function page() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/detail")
+    fetch("https://nextjs-booking-app-three.vercel.app/api/detail")
       .then((res) => res.json())
       .then((data) => {
         setBookings(data);

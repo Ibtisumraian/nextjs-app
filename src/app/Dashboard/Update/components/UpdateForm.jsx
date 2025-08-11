@@ -13,7 +13,7 @@ export default function UpdateForm({ id }) {
   useEffect(() => {
     const fetchHotel = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/update-items/${id}`);
+        const res = await fetch(`https://nextjs-booking-app-three.vercel.app/api/update-items/${id}`);
         const data = await res.json();
         setHotel(data);
         setFeatures(data.features || [""]);
@@ -49,7 +49,7 @@ export default function UpdateForm({ id }) {
     };
 
     try {
-      const res = await fetch(`http://localhost:3000/api/update-items/${id}`, {
+      const res = await fetch(`https://nextjs-booking-app-three.vercel.app/api/update-items/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),

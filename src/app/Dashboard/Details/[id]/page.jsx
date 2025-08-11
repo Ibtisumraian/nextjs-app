@@ -3,7 +3,7 @@ import React from "react";
 export default async function Page({ params }) {
   const { id } = await params; 
 
-  const res = await fetch(`http://localhost:3000/api/detail/${id}`, {
+  const res = await fetch(`https://nextjs-booking-app-three.vercel.app/api/detail/${id}`, {
  
     cache: "no-store",
   });

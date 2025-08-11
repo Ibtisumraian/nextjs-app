@@ -6,7 +6,7 @@ export default function DeleteHotelButton({ id, onDelete }) {
     if (!confirm("Are you sure you want to delete this item?")) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/detail/${id}`, {
+      const res = await fetch(`https://nextjs-booking-app-three.vercel.app/api/detail/${id}`, {
         method: "DELETE",
       });
 

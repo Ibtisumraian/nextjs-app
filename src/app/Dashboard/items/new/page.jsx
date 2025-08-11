@@ -39,7 +39,7 @@ export default function AddItem() {
 
     // console.log("Submit this data to backend:", data);
       // TODO: submit data via API or server action
-      const res = await fetch('http://localhost:3000/api/detail', {
+      const res = await fetch('https://nextjs-booking-app-three.vercel.app/api/detail', {
           method: 'POST',
           body: JSON.stringify(data)
       })
