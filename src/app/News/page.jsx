@@ -9,7 +9,7 @@ export default function Page() {
       description: "Several new destinations are being opened for travelers...",
       fullDescription:
         "Several new destinations are being opened for travelers around the world, including hidden gems in Southeast Asia and Europe. These destinations are designed to boost local economies and provide unique experiences for adventurers.",
-      image: "https://source.unsplash.com/400x250/?travel",
+      image: "https://res.cloudinary.com/deqw8tu5v/image/upload/v1749719427/samples/landscapes/nature-mountains.jpg",
       date: "Aug 5, 2025",
     },
     {
@@ -18,7 +18,7 @@ export default function Page() {
       description: "Good news for travelers as ticket prices are falling...",
       fullDescription:
         "Global airlines have announced a significant drop in ticket prices following a surge in tourism demand. This is expected to make travel more accessible to millions and boost tourism economies worldwide.",
-      image: "https://source.unsplash.com/400x250/?airplane",
+      image: "https://res.cloudinary.com/deqw8tu5v/image/upload/v1749719427/samples/landscapes/beach-boat.jpg",
       date: "Aug 4, 2025",
     },
     {
@@ -27,7 +27,7 @@ export default function Page() {
       description: "From Maldives to Bali, here are the most beautiful beaches...",
       fullDescription:
         "This summer’s list of top beaches includes breathtaking spots in the Maldives, Bali, Seychelles, and the Caribbean. Each offers crystal-clear waters, soft white sands, and unforgettable sunsets.",
-      image: "https://source.unsplash.com/400x250/?beach",
+      image: "https://res.cloudinary.com/deqw8tu5v/image/upload/v1749719435/cld-sample-2.jpg",
       date: "Aug 3, 2025",
     },
     {
@@ -36,7 +36,7 @@ export default function Page() {
       description: "Travel just got easier for many passport holders...",
       fullDescription:
         "Several countries have announced new visa-free entry policies for 2025. This is expected to encourage tourism and strengthen cultural exchange between nations.",
-      image: "https://source.unsplash.com/400x250/?passport",
+      image: "https://res.cloudinary.com/deqw8tu5v/image/upload/v1749719435/cld-sample-2.jpg",
       date: "Aug 2, 2025",
     },
     {
@@ -45,7 +45,7 @@ export default function Page() {
       description: "Travelers are choosing eco-friendly destinations...",
       fullDescription:
         "Eco-tourism is gaining massive popularity, with travelers opting for destinations that prioritize sustainability and environmental preservation.",
-      image: "https://source.unsplash.com/400x250/?forest",
+      image: "https://res.cloudinary.com/deqw8tu5v/image/upload/v1749719427/samples/landscapes/nature-mountains.jpg",
       date: "Aug 1, 2025",
     },
     {
@@ -54,7 +54,7 @@ export default function Page() {
       description: "Booking a trip to space is now more possible than ever...",
       fullDescription:
         "With companies like SpaceX and Blue Origin pushing boundaries, space tourism tickets are selling rapidly. Early participants will experience a few minutes of weightlessness and breathtaking views of Earth.",
-      image: "https://source.unsplash.com/400x250/?space",
+      image: "https://res.cloudinary.com/deqw8tu5v/image/upload/v1749719427/samples/landscapes/beach-boat.jpg ",
       date: "Jul 30, 2025",
     },
   ];
